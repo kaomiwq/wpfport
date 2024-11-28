@@ -1,0 +1,86 @@
+﻿<Page x:Class="WpfApp2.AddEmployesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="AddEmployesPage">
+
+    <Grid Background="#FF371318">
+        <Rectangle HorizontalAlignment="Left" Height="1080" Stroke="Black" VerticalAlignment="Center" Width="660" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" />
+        <TextBlock HorizontalAlignment="Left" Height="327" Margin="5,0,0,683" TextWrapping="Wrap" Text="Bradley" VerticalAlignment="Bottom" Width="650" FontFamily="Vladimir Script" FontSize="150" FontWeight="Bold" Foreground="White" TextAlignment="Center"/>
+        <Rectangle Height="602" Margin="804,0,0,78" Stroke="Black" VerticalAlignment="Bottom" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" HorizontalAlignment="Left" Width="992" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TextBox Margin="942,476,238,542" BorderBrush="White" Visibility="Hidden" />
+        <Button Content="Сотрудники" x:Name="EmployesButton" Width="660" Margin="0,0,0,540" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Opacity="1" HorizontalAlignment="Left" Height="200" VerticalAlignment="Bottom">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF371318" Offset="0.618"/>
+                    <GradientStop Color="#FF866B6F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content ="Заявки" x:Name="OrdersButton" Margin="0,0,0,302" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" Click="OrdersButton_Click" HorizontalAlignment="Left" Width="660" Height="200" VerticalAlignment="Bottom"/>
+        <Button Content ="Порт" x:Name="PortButton" Width="660" Margin="0,0,0,59" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" Click="PortButton_Click" HorizontalAlignment="Left" Height="200" VerticalAlignment="Bottom"/>
+        <Button Content ="Добавить сотрудника" Margin="688,0,0,784" Width="600" BorderThickness="10,10,10,10" BorderBrush="Black" FontFamily="Arial Black" FontSize="36" Foreground="White" Click="Button_Click" Height="206" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF866B6F"/>
+                    <GradientStop Color="#FF866B6F" Offset="1"/>
+                    <GradientStop Offset="0" Color="#FF401010"/>
+                    <GradientStop Color="#FF441616" Offset="0"/>
+                    <GradientStop Color="#FF5A1B1C" Offset="0.576"/>
+                    <GradientStop Color="#FF5A1C1D" Offset="0.693"/>
+                    <GradientStop Color="#FF591A1B" Offset="0.573"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content ="Список cотрудников" Margin="1310,0,10,784" Background="#FF6F0202" Width="600" BorderThickness="10,10,10,10" BorderBrush="Black" Foreground="White" FontFamily="Arial Black" FontSize="36" Click="EmployesListButton_Click" Height="206" VerticalAlignment="Bottom"/>
+        <TextBlock Margin="804,0,0,565" TextWrapping="Wrap" Width="992" TextAlignment="Center" FontFamily="Arial Black" FontSize="36" HorizontalAlignment="Left" Height="57" VerticalAlignment="Bottom"><Run Language="ru-ru" Text="Внесите данные нового сотрудника"/></TextBlock>
+        <Border CornerRadius="30" Margin="920,0,0,381" HorizontalAlignment="Left" Width="784" Height="66" VerticalAlignment="Bottom">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.854"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <TextBox x:Name="NameBox" Background="{x:Null}" Margin="30,0,33,0" FontSize="40" Foreground="Black" BorderBrush="{x:Null}" SelectionBrush="White"/>
+        </Border>
+        <TextBlock Margin="688,0,0,447" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Arial Black" FontSize="15" Foreground="Black" Background="{DynamicResource MaterialDesign.Brush.Primary.Light.Foreground}" Height="23" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="625"><Run Language="ru-ru" Text="Введите имя"/></TextBlock>
+        <Border CornerRadius="30" Margin="920,0,0,285" HorizontalAlignment="Left" Width="784" Height="66" VerticalAlignment="Bottom">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.819"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <TextBox x:Name="PostBox" TextWrapping="Wrap" FontSize="40" Background="{x:Null}" BorderBrush="{x:Null}" Margin="27,0,10,0" SelectionBrush="White"/>
+        </Border>
+        <TextBlock Margin="804,0,0,356" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Arial Black" FontSize="15" Foreground="Black" Background="{DynamicResource MaterialDesign.Brush.Primary.Light.Foreground}" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="443"><Run Language="ru-ru" Text="Введите должность"/></TextBlock>
+        <Border CornerRadius="30" Margin="920,0,0,189" HorizontalAlignment="Left" Width="784" Height="66" VerticalAlignment="Bottom">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.786"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <TextBox x:Name="PhoneNumberBox" TextWrapping="Wrap" Margin="30,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="40" SelectionBrush="White"/>
+        </Border>
+        <TextBlock Margin="884,0,0,260" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Arial Black" FontSize="15" Foreground="Black" Background="{DynamicResource MaterialDesign.Brush.Primary.Light.Foreground}" HorizontalAlignment="Left" Width="340" Height="20" VerticalAlignment="Bottom"><Run Language="ru-ru" Text="Введите номер телефона"/></TextBlock>
+        <Button Content="Внести" x:Name ="AddEmployeButton" HorizontalAlignment="Left" Height="59" Margin="1112,0,0,100" VerticalAlignment="Bottom" Width="400" BorderThickness="10,5,10,5" Background="#FF7292A0" BorderBrush="Black" FontSize="40" FontFamily="Arial Black" Click="AddEmployeButton_Click" />
+    </Grid>
+</Page>

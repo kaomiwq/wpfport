@@ -1,0 +1,20 @@
+﻿<Page x:Class="WpfApp2.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1980"
+      Title="MainPage">
+
+
+    <Grid Background="#FF371318">
+        <Rectangle HorizontalAlignment="Left" Height="1080" Stroke="Black" VerticalAlignment="Center" Width="660" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" />
+        <Button Content ="Порт" x:Name="PortButton" Width="660" Height="200" Margin="0,0,0,59" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" Click="PortButton_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <Button Content="Сотрудники" x:Name="EmployesButton" Width="660" Height="200" Margin="0,0,0,540" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" Click="EmployesButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <Button Content ="Заявки" x:Name="OrdersButton" Width="660" Height="200" Margin="0,0,0,302" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" Click="OrdersButton_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <TextBlock HorizontalAlignment="Left" Height="327" Margin="5,0,0,683" TextWrapping="Wrap" Text="Bradley" VerticalAlignment="Bottom" Width="650" FontFamily="Vladimir Script" FontSize="150" FontWeight="Bold" Foreground="White" TextAlignment="Center"/>
+
+    </Grid>
+</Page>
