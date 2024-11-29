@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp2.Properties;
 
 namespace WpfApp2
 {
@@ -23,6 +24,9 @@ namespace WpfApp2
         public OrdersPage()
         {
             InitializeComponent();
+
+            var data = Connect.conn.Orders.ToList();
+            OrdersGrid.ItemsSource = data;
         }
 
         private void PortButton_Click(object sender, RoutedEventArgs e)

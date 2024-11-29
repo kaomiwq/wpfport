@@ -12,9 +12,25 @@
         <Rectangle HorizontalAlignment="Left" Height="1080" Stroke="Black" VerticalAlignment="Center" Width="660" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" />
         <Button Content ="Порт" x:Name="PortButton" Width="660" Height="200" Margin="0,0,0,59" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" Click="PortButton_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
         <Button Content="Сотрудники" x:Name="EmployesButton" Width="660" Height="200" Margin="0,0,0,540" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" Click="EmployesButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <Button Content ="Заявки" x:Name="OrdersButton" Width="660" Height="200" Margin="0,0,0,302" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" Background="#FF6F0202" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+        <Button Content ="Заявки" x:Name="OrdersButton" Width="660" Height="200" Margin="0,0,0,302" FontFamily="Arial Black" FontSize="36" BorderThickness="10,10,10,10" Foreground="White" BorderBrush="Black" VerticalAlignment="Bottom" HorizontalAlignment="Left" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A161B" Offset="0.717"/>
+                    <GradientStop Color="#FF866B6F" Offset="1"/>
+                    <GradientStop Color="#FF3A161B" Offset="0.644"/>
+                    <GradientStop Color="#FF39151A" Offset="0.692"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
         <TextBlock Height="327" Margin="5,0,0,683" TextWrapping="Wrap" Text="Bradley" VerticalAlignment="Bottom" FontFamily="Vladimir Script" FontSize="150" FontWeight="Bold" Foreground="White" TextAlignment="Center" HorizontalAlignment="Left" Width="650"/>
-        <TextBlock HorizontalAlignment="Left" Height="327" Margin="913,0,0,10" TextWrapping="Wrap" Text="Bradley" VerticalAlignment="Bottom" Width="650" FontFamily="Vladimir Script" FontSize="150" FontWeight="Bold" Foreground="White" TextAlignment="Center"/>
-
+        <DataGrid x:Name = "OrdersGrid" Background="White" AutoGenerateColumns="False"  Height="854" Margin="725,168,49,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="100" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Номер заказа" Width="350" Binding="{Binding Client.ID}"/>
+                <DataGridTextColumn Header="Теплоход" Width="250" Binding="{Binding Ship.Title}"/>
+                <DataGridTextColumn Header="Водитель" Width="250" Binding="{Binding Ship.Captain.Name}"/>
+                <DataGridTextColumn Header="Цена" Width="250" Binding="{Binding Ship.Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

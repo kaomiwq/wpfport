@@ -68,19 +68,6 @@
             <TextBox x:Name="PostBox" TextWrapping="Wrap" FontSize="40" Background="{x:Null}" BorderBrush="{x:Null}" Margin="27,0,10,0" SelectionBrush="White"/>
         </Border>
         <TextBlock Margin="804,0,0,356" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Arial Black" FontSize="15" Foreground="Black" Background="{DynamicResource MaterialDesign.Brush.Primary.Light.Foreground}" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="443"><Run Language="ru-ru" Text="Введите должность"/></TextBlock>
-        <Border CornerRadius="30" Margin="920,0,0,189" HorizontalAlignment="Left" Width="784" Height="66" VerticalAlignment="Bottom">
-            <Border.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="White" Offset="0.786"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
-            </Border.Effect>
-            <TextBox x:Name="PhoneNumberBox" TextWrapping="Wrap" Margin="30,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="40" SelectionBrush="White"/>
-        </Border>
-        <TextBlock Margin="884,0,0,260" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Arial Black" FontSize="15" Foreground="Black" Background="{DynamicResource MaterialDesign.Brush.Primary.Light.Foreground}" HorizontalAlignment="Left" Width="340" Height="20" VerticalAlignment="Bottom"><Run Language="ru-ru" Text="Введите номер телефона"/></TextBlock>
         <Button Content="Внести" x:Name ="AddEmployeButton" HorizontalAlignment="Left" Height="59" Margin="1112,0,0,100" VerticalAlignment="Bottom" Width="400" BorderThickness="10,5,10,5" Background="#FF7292A0" BorderBrush="Black" FontSize="40" FontFamily="Arial Black" Click="AddEmployeButton_Click" />
     </Grid>
 </Page>

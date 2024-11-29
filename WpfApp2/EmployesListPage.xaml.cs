@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,17 +13,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp2.Properties;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Логика взаимодействия для EmployesListPage.xaml
-    /// </summary>
     public partial class EmployesListPage : Page
     {
         public EmployesListPage()
         {
             InitializeComponent();
+
+            var data = Connect.conn.Staffs.ToList();
+            StaffGrid.ItemsSource = data;
         }
 
        

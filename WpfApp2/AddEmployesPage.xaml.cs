@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,19 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp2.DataBase;
+using WpfApp2.Properties;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Логика взаимодействия для AddEmployesPage.xaml
-    /// </summary>
     public partial class AddEmployesPage : Page
     {
+        private Data dataBase;
         public AddEmployesPage()
         {
             InitializeComponent();
-        }
+            var dbContext = new ShipShipEntities();
+            dataBase = new Data(dbContext);
 
+        }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -44,27 +48,12 @@ namespace WpfApp2
             NavigationService.Navigate(new EmployesListPage());
         }
 
-        private void AddEmployeButton_Click(object sender, RoutedEventArgs e)
+        private async void AddEmployeButton_Click(object sender, RoutedEventArgs e)
         {
             string name = NameBox.Text;
-            string post = PostBox.Text;
-            string phoneNumber = PhoneNumberBox.Text;
 
-            if (name.Length > 30 && name.Length < 2 && post.Length <= 0 && phoneNumber.Length <= 0)
-            {
-                NameBox.ToolTip = "Поле введенно некоректно!";
-                NameBox.Background = Brushes.DarkRed;
-            }
-            else {
-                NameBox.ToolTip = "";
-                NameBox.Background = Brushes.Transparent;
-                PostBox.ToolTip = "";
-                PostBox.Background = Brushes.Transparent;
-                PhoneNumberBox.ToolTip = "";
-                PhoneNumberBox.Background = Brushes.Transparent;
-
-                MessageBox.Show("Сотрудник внесен в базу данных!");
-            }
+            await dataBase.SaveStaff(name);
+            NavigationService.Navigate(new EmployesPage());
         }
     }
 }
